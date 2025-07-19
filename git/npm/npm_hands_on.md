@@ -1,8 +1,3 @@
-Here is a **GitHub-compatible, markdown-based hands-on guide** for your topic:
-**“Source Control Integration + NPM Overview, Installation, and Build Workflow”**
-You can directly add this as a `README.md` file in a training or demo repository.
-
----
 
 # 🚀 Source Control + NPM Hands-On Guide
 
