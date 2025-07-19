@@ -1,13 +1,3 @@
-Here is a **GitHub-compatible hands-on guide** that extends your **Java (or npm)** project with **Docker concepts**.
-It covers:
-✅ What & Why of Containers
-✅ VMs vs Containers
-✅ Docker Architecture
-✅ Docker Hub & Image Distribution
-✅ Working with Dockerfile and Containers
-
----
-
 # 🐳 Docker Hands-On Guide — Build, Run & Push Your App
 
 This guide will help you understand containers and build your own Dockerized Java or Node.js app from scratch, publish it to Docker Hub, and run it anywhere.
