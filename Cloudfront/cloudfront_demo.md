@@ -32,7 +32,7 @@ Deliver static content (HTML, CSS, images) globally with low latency using **S3 
 
 ---
 
-### 🔹 Step 3: Make the Files Public
+### 🔹 Step 3: Make the Files Public ( Optional if Bukcet is not made public) 
 
 Option A: Use object actions  
 - Select `index.html` → Actions → **Make public**.
