@@ -66,6 +66,7 @@ Option B: Use a bucket policy:
 
    * **Viewer protocol policy**: Redirect HTTP to HTTPS
 6. Leave other defaults. Click **Create distribution**.
+7. Edit General settings and set "Default root object" to "index.html".  
 
 > 💡 Wait \~10 minutes for CloudFront to deploy.
 
