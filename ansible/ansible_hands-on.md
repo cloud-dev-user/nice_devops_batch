@@ -34,10 +34,72 @@ ansible --version
 
 ```bash
 ssh-keygen -t rsa
-ssh-copy-id user@managed-node
+```
+### ✅ Step 1: On the Control Node – Get Your Public Key
+
+```bash
+cat ~/.ssh/id_rsa.pub
+````
+
+Copy the full output (starts with `ssh-rsa`).
+
+---
+
+### ✅ Step 2: On the EC2 Instance – Add Public Key Manually
+
+1. Create `.ssh` directory if it doesn't exist:
+
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
 ```
 
-### Create `hosts` inventory file:
+2. Edit or create the `authorized_keys` file:
+
+```bash
+nano ~/.ssh/authorized_keys
+# OR
+vi ~/.ssh/authorized_keys
+```
+
+3. Paste the copied public key from **Step 1** as a new line in the file.
+
+4. Save and exit the editor.
+
+5. Set proper permissions:
+
+```bash
+chmod 600 ~/.ssh/authorized_keys
+```
+
+---
+
+### ✅ Step 3: From the Control Node – Test SSH Access
+
+```bash
+ssh ec2-user@<ec2-public-ip>
+```
+
+> Replace `ec2-user` with the appropriate default username for your AMI:
+---
+
+## Check file and folder permissions:
+
+  ```bash
+  chmod 700 ~/.ssh
+  chmod 600 ~/.ssh/authorized_keys
+  ```
+
+
+## ✅ Result
+
+You should now be able to SSH from the control node to the EC2 instance **without using a password or `.ppk` file**, using your SSH key instead.
+
+```
+ssh ec2-user@<ec2-public-ip>
+```
+
+### Create `hosts` inventory file and provide the public IP address of EC2 instance created:
 
 ```ini
 [webservers]
