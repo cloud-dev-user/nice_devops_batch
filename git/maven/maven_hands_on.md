@@ -76,9 +76,7 @@ If not installed, download and install from:
 ### ✅ Step 2: Generate Maven Project
 
 ```bash
-mvn archetype:generate -DgroupId=com.demo.app -DartifactId=my-maven-app \
-  -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-cd my-maven-app
+git clone https://github.com/cloud-dev-user/javademo.git
 ```
 
 ### ✅ Step 3: Project Structure
