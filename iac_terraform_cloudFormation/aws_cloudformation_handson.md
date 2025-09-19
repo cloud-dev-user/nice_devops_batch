@@ -62,9 +62,15 @@ Create `stack-policy.json`:
   "Statement": [
     {
       "Effect": "Deny",
-      "Action": "Delete:*",
+      "Action": "Update:Delete",
       "Principal": "*",
-      "Resource": "LogicalResourceId/MyS3Bucket"
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ResourceType": "AWS::S3::Bucket"
+          "LogicalResourceId": "MyS3Bucket"
+        }
+      }
     }
   ]
 }
@@ -97,3 +103,4 @@ aws cloudformation set-stack-policy --stack-name SimpleS3Stack --stack-policy-bo
 
 aws cloudformation delete-stack --stack-name SimpleS3Stack
 ```
+
